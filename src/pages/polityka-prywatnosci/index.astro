@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+
+const pageTitle = "Polityka prywatności — ZostanCopywriterem.pl";
+const pageDescription = "Polityka prywatności serwisu ZostanCopywriterem.pl. Informacje o przetwarzaniu danych osobowych, cookies, Google Analytics i prawach użytkownika zgodnie z RODO.";
+const lastUpdated = "10 marca 2026";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Ścieżka nawigacyjna">
+      <ol>
+        <li><a href="/">Strona główna</a></li>
+        <li aria-current="page">Polityka prywatności</li>
+      </ol>
+    </nav>
+  </div>
+
+  <article class="container container--prose" style="padding-bottom: var(--space-16);">
+    <header class="pp-header">
+      <h1>Polityka prywatności</h1>
+      <p class="pp-updated">Ostatnia aktualizacja: {lastUpdated}</p>
+    </header>
+
+    <div class="prose">
+
+      <h2 id="administrator">1. Administrator danych osobowych</h2>
+
+      <p>Administratorem danych osobowych zbieranych za pośrednictwem serwisu <strong>zostancopywriterem.pl</strong> (dalej: „Serwis") jest:</p>
+
+      <p>
+        <strong>Karol Leszczyński</strong><br />
+        prowadzący działalność gospodarczą Ecopywriting.pl Karol Leszczyński, NIP: 9562203948, REGON: 340627879, pod adresem: Papowo Biskupie 119/18<br />
+        Adres e-mail: <a href="mailto:kontakt@zostancopywriterem.pl">kontakt@zostancopywriterem.pl</a>
+      </p>
+
+      <p>W sprawach związanych z ochroną danych osobowych można kontaktować się z Administratorem pod powyższym adresem e-mail.</p>
+
+
+      <h2 id="podstawy-prawne">2. Podstawy prawne przetwarzania danych</h2>
+
+      <p>Dane osobowe przetwarzane są zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych (RODO) oraz ustawą z dnia 10 maja 2018 r. o ochronie danych osobowych.</p>
+
+      <p>Podstawy prawne przetwarzania danych w Serwisie:</p>
+
+      <ul>
+        <li><strong>Art. 6 ust. 1 lit. a) RODO</strong> — zgoda użytkownika (pliki cookies analityczne)</li>
+        <li><strong>Art. 6 ust. 1 lit. f) RODO</strong> — prawnie uzasadniony interes Administratora (zapewnienie bezpieczeństwa i prawidłowego działania Serwisu, analityka w formie zanonimizowanej)</li>
+      </ul>
+
+
+      <h2 id="zakres-danych">3. Zakres zbieranych danych</h2>
+
+      <p>Serwis <strong>zostancopywriterem.pl</strong> jest stroną statyczną (HTML) i nie posiada formularza kontaktowego, systemu kont użytkowników, panelu logowania ani bazy danych. Serwis nie zbiera danych osobowych umożliwiających bezpośrednią identyfikację użytkownika bez jego zgody.</p>
+
+      <h3>3.1. Dane zbierane automatycznie</h3>
+
+      <p>Dane techniczne zbierane przez infrastrukturę hostingową (logi serwera AWS CloudFront) obejmują:</p>
+
+      <ul>
+        <li>Adres IP (w formie zanonimizowanej w logach CDN)</li>
+        <li>Data i godzina żądania</li>
+        <li>Adres URL żądanej strony</li>
+        <li>Kod odpowiedzi HTTP</li>
+        <li>Identyfikator przeglądarki (User-Agent)</li>
+      </ul>
+
+      <p>Logi CloudFront są przechowywane przez Amazon Web Services wyłącznie w celach technicznych (diagnostyka, bezpieczeństwo) i nie są wykorzystywane do identyfikacji poszczególnych użytkowników.</p>
+
+      <h3>3.2. Dane analityczne</h3>
+
+      <p>Po wyrażeniu zgody przez użytkownika w banerze cookies, Serwis zbiera zanonimizowane dane analityczne za pośrednictwem Google Analytics 4: odwiedzone podstrony, czas wizyty, źródło ruchu, typ urządzenia i przeglądarki. Szczegóły w sekcjach 4 i 5.</p>
+
+
+      <h2 id="cookies">4. Pliki cookies</h2>
+
+      <h3>4.1. Czym są pliki cookies</h3>
+
+      <p>Pliki cookies (ciasteczka) to niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika przez przeglądarkę internetową. Służą do zapamiętywania preferencji, analityki i prawidłowego funkcjonowania stron internetowych.</p>
+
+      <h3>4.2. Rodzaje cookies stosowanych w Serwisie</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nazwa / Rodzaj</th>
+            <th>Dostawca</th>
+            <th>Cel</th>
+            <th>Czas przechowywania</th>
+            <th>Wymaga zgody</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>cookie_consent</code></td>
+            <td>ZostanCopywriterem.pl</td>
+            <td>Zapamiętanie decyzji użytkownika dot. cookies</td>
+            <td>365 dni</td>
+            <td>Nie (niezbędne)</td>
+          </tr>
+          <tr>
+            <td><code>_ga</code>, <code>_ga_*</code></td>
+            <td>Google Analytics 4</td>
+            <td>Analityka ruchu na stronie (liczba odwiedzin, źródła ruchu, przeglądane strony)</td>
+            <td>Do 2 lat</td>
+            <td><strong>Tak</strong></td>
+          </tr>
+          <tr>
+            <td><code>_gid</code></td>
+            <td>Google Analytics 4</td>
+            <td>Rozróżnianie użytkowników w ramach sesji</td>
+            <td>24 godziny</td>
+            <td><strong>Tak</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.3. Google Consent Mode v2</h3>
+
+      <p>Serwis stosuje mechanizm <strong>Google Consent Mode v2</strong>, który zapewnia, że:</p>
+
+      <ul>
+        <li>Pliki cookies analityczne (Google Analytics) <strong>nie są ustawiane domyślnie</strong> — wymagają wyraźnej zgody użytkownika</li>
+        <li>Przed wyrażeniem zgody wszystkie kategorie przechowywania danych (<code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>, <code>functionality_storage</code>, <code>personalization_storage</code>) mają status <strong>„denied"</strong> (odmowa)</li>
+        <li>Skrypt Google Analytics jest ładowany, ale <strong>nie zbiera danych</strong> dopóki użytkownik nie wyrazi zgody w banerze cookies</li>
+        <li>Jedynie <code>security_storage</code> ma domyślny status „granted" (niezbędne do bezpieczeństwa)</li>
+      </ul>
+
+      <p>Użytkownik może zmienić swoje preferencje cookies w dowolnym momencie, klikając ikonę cookie (🍪) w lewym dolnym rogu strony.</p>
+
+      <h3>4.4. Zarządzanie cookies w przeglądarce</h3>
+
+      <p>Niezależnie od ustawień w Serwisie, użytkownik może zarządzać plikami cookies na poziomie przeglądarki. Instrukcje dla popularnych przeglądarek:</p>
+
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/pl/kb/usuwanie-ciasteczek" rel="noopener noreferrer" target="_blank">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/pl-pl/guide/safari/sfri11471" rel="noopener noreferrer" target="_blank">Safari</a></li>
+        <li><a href="https://support.microsoft.com/pl-pl/microsoft-edge/usuwanie-plik%C3%B3w-cookie" rel="noopener noreferrer" target="_blank">Microsoft Edge</a></li>
+      </ul>
+
+
+      <h2 id="google-analytics">5. Google Analytics 4</h2>
+
+      <p>Serwis korzysta z usługi <strong>Google Analytics 4</strong> (GA4, identyfikator: G-KQG8RXQPD2) świadczonej przez Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlandia).</p>
+
+      <p><strong>Zakres danych:</strong> GA4 zbiera dane o interakcji użytkownika z Serwisem w formie zanonimizowanej: odwiedzane strony, czas na stronie, źródło ruchu (wyszukiwarka, bezpośrednie wejście, link z innej strony), przybliżona lokalizacja (kraj, region — nie adres), typ urządzenia i przeglądarki.</p>
+
+      <p><strong>Warunki zbierania:</strong> Dane zbierane są <strong>wyłącznie po wyrażeniu zgody</strong> przez użytkownika w banerze cookies (Google Consent Mode v2). Bez zgody — żadne dane analityczne nie są gromadzone.</p>
+
+      <p><strong>Anonimizacja IP:</strong> GA4 domyślnie anonimizuje adresy IP użytkowników — pełny adres IP nie jest przechowywany ani przetwarzany. Dodatkowo w konfiguracji Serwisu aktywna jest flaga <code>anonymize_ip: true</code>.</p>
+
+      <p><strong>Przekazywanie danych:</strong> Dane mogą być przekazywane do serwerów Google w Stanach Zjednoczonych. Google stosuje standardowe klauzule umowne (SCC) oraz dodatkowe środki ochrony zgodnie z wymogami RODO. Więcej informacji: <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Polityka prywatności Google</a>.</p>
+
+      <p><strong>Rezygnacja:</strong> Użytkownik może zrezygnować ze śledzenia GA4 poprzez: odmowę zgody w banerze cookies, zmianę preferencji cookies (ikonka w lewym dolnym rogu strony) lub instalację dodatku do przeglądarki <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">Google Analytics Opt-out</a>.</p>
+
+
+      <h2 id="infrastruktura">6. Infrastruktura techniczna i podmioty przetwarzające</h2>
+
+      <p>Serwis korzysta z usług następujących podmiotów przetwarzających dane:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Podmiot</th>
+            <th>Usługa</th>
+            <th>Zakres danych</th>
+            <th>Lokalizacja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Amazon Web Services (AWS)</strong><br />Amazon Web Services EMEA SARL</td>
+            <td>Hosting strony (S3 + CloudFront)</td>
+            <td>Logi dostępu CDN (zanonimizowane)</td>
+            <td>EU (Frankfurt, eu-central-1)</td>
+          </tr>
+          <tr>
+            <td><strong>Google Ireland Limited</strong></td>
+            <td>Google Analytics 4</td>
+            <td>Zanonimizowane dane analityczne (tylko po zgodzie)</td>
+            <td>EU / US (SCC)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Strona jest hostowana jako strona statyczna (HTML) na infrastrukturze AWS S3 + CloudFront. <strong>Serwis nie posiada bazy danych, panelu logowania użytkowników, formularza kontaktowego ani systemu kont użytkowników.</strong></p>
+
+
+      <h2 id="prawa">7. Prawa użytkownika</h2>
+
+      <p>Zgodnie z RODO, użytkownikowi przysługują następujące prawa:</p>
+
+      <ul>
+        <li><strong>Prawo dostępu do danych</strong> (art. 15 RODO) — prawo do uzyskania informacji, jakie dane są przetwarzane i w jakim celu</li>
+        <li><strong>Prawo do sprostowania danych</strong> (art. 16 RODO) — prawo do poprawienia nieprawidłowych lub niekompletnych danych</li>
+        <li><strong>Prawo do usunięcia danych</strong> (art. 17 RODO) — prawo do żądania usunięcia danych („prawo do bycia zapomnianym")</li>
+        <li><strong>Prawo do ograniczenia przetwarzania</strong> (art. 18 RODO) — prawo do żądania ograniczenia przetwarzania w określonych przypadkach</li>
+        <li><strong>Prawo do przenoszenia danych</strong> (art. 20 RODO) — prawo do otrzymania danych w ustrukturyzowanym formacie</li>
+        <li><strong>Prawo do sprzeciwu</strong> (art. 21 RODO) — prawo do wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie</li>
+        <li><strong>Prawo do wycofania zgody</strong> (art. 7 ust. 3 RODO) — w przypadku przetwarzania opartego na zgodzie, prawo do wycofania zgody w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania dokonanego przed wycofaniem)</li>
+      </ul>
+
+      <p>W celu skorzystania z powyższych praw, należy skontaktować się z Administratorem pod adresem: <a href="mailto:kontakt@zostancopywriterem.pl">kontakt@zostancopywriterem.pl</a>. Administrator odpowie na żądanie bez zbędnej zwłoki, nie później niż w ciągu 30 dni.</p>
+
+      <p>Użytkownik ma również prawo wniesienia skargi do organu nadzorczego — <strong>Prezesa Urzędu Ochrony Danych Osobowych</strong> (ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" rel="noopener noreferrer" target="_blank">uodo.gov.pl</a>).</p>
+
+
+      <h2 id="bezpieczenstwo">8. Bezpieczeństwo danych</h2>
+
+      <p>Administrator stosuje odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych:</p>
+
+      <ul>
+        <li><strong>Szyfrowanie transmisji:</strong> cała komunikacja z Serwisem odbywa się przez protokół HTTPS (certyfikat SSL/TLS wystawiony przez AWS Certificate Manager)</li>
+        <li><strong>Hosting statyczny:</strong> Serwis działa jako strona statyczna (HTML) na AWS S3 + CloudFront — brak bazy danych, brak panelu logowania, brak serwera aplikacyjnego, co eliminuje typowe wektory ataków (SQL injection, XSS, brute force)</li>
+        <li><strong>Kontrola dostępu:</strong> infrastruktura AWS zabezpieczona politykami IAM z zasadą minimalnych uprawnień</li>
+        <li><strong>Protokół HTTP/2 i HTTP/3:</strong> wykorzystywane dla lepszej wydajności i bezpieczeństwa połączenia</li>
+      </ul>
+
+
+      <h2 id="linki-zewnetrzne">9. Linki do stron zewnętrznych</h2>
+
+      <p>Serwis może zawierać linki do zewnętrznych stron internetowych. Administrator nie ponosi odpowiedzialności za polityki prywatności ani praktyki przetwarzania danych tych stron. Zalecamy zapoznanie się z polityką prywatności każdej odwiedzanej strony zewnętrznej.</p>
+
+
+      <h2 id="dzieci">10. Dane dzieci</h2>
+
+      <p>Serwis nie jest skierowany do osób poniżej 16 roku życia. Administrator świadomie nie zbiera danych osobowych od dzieci. W razie wątpliwości prosimy o kontakt z Administratorem.</p>
+
+
+      <h2 id="zmiany">11. Zmiany polityki prywatności</h2>
+
+      <p>Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki prywatności. Wszelkie zmiany będą publikowane na tej stronie z nową datą aktualizacji. Istotne zmiany mogą być komunikowane dodatkowo za pośrednictwem bannera na stronie.</p>
+
+      <p>Korzystanie z Serwisu po opublikowaniu zmian oznacza akceptację zaktualizowanej Polityki prywatności.</p>
+
+
+      <h2 id="kontakt">12. Kontakt</h2>
+
+      <p>W przypadku pytań dotyczących niniejszej Polityki prywatności lub przetwarzania danych osobowych:</p>
+
+      <p>
+        <strong>Karol Leszczyński</strong><br />
+        E-mail: <a href="mailto:kontakt@zostancopywriterem.pl">kontakt@zostancopywriterem.pl</a><br />
+        Strona: <a href="https://www.zostancopywriterem.pl">zostancopywriterem.pl</a>
+      </p>
+
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .pp-header {
+    padding: var(--space-12) 0 var(--space-6);
+    border-bottom: 1px solid var(--c-border);
+    margin-bottom: var(--space-8);
+  }
+
+  .pp-header h1 {
+    font-size: var(--fs-3xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .pp-updated {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+  }
+</style>
