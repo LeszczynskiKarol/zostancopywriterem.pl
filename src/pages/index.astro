@@ -22,7 +22,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       </p>
       <div class="btn-group animate-in animate-delay-3">
         <a href="/blog" class="btn btn-primary">Czytaj artykuły</a>
-        <a href="/kurs-copywritingu" class="btn btn-outline">Kurs copywritingu</a>
+        
       </div>
     </div>
   </section>
@@ -94,14 +94,5 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-section">
-        <h2>Gotowy, żeby zacząć?</h2>
-        <p>Dołącz do społeczności copywriterów i zacznij swoją przygodę z pisaniem.</p>
-        <a href="/kurs-copywritingu" class="btn btn-primary">Sprawdź kurs copywritingu</a>
-      </div>
-    </div>
-  </section>
+  
 </Base>

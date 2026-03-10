@@ -6,8 +6,8 @@ const { currentPath = '' } = Astro.props;
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
-  { href: '/o-nas', label: 'O nas' },
-  { href: '/konsultacje', label: 'Konsultacje' },
+  
+  
   { href: '/kontakt', label: 'Kontakt' },
 ];
 ---
@@ -16,7 +16,7 @@ const navLinks = [
   <div class="container header-inner">
     <a href="/" class="site-logo">
       <span class="logo-mark">ZC</span>
-      <span>Zostań Copywriterem</span>
+      <span>ZostanCopywriterem.pl</span>
     </a>
 
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -36,7 +36,7 @@ const navLinks = [
           {link.label}
         </a>
       ))}
-      <a href="/kurs-copywritingu" class="nav-cta">Kurs</a>
+      
     </nav>
   </div>
 </header>
