@@ -1,0 +1,51 @@
+---
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/o-nas', label: 'O nas' },
+  { href: '/konsultacje', label: 'Konsultacje' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-mark">ZC</span>
+      <span>Zostań Copywriterem</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <nav class="main-nav" id="main-nav">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[{ active: currentPath.startsWith(link.href) }]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/kurs-copywritingu" class="nav-cta">Kurs</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('main-nav');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', nav?.classList.contains('open') ? 'true' : 'false');
+  });
+</script>

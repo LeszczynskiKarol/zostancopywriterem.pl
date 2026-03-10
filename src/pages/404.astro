@@ -1,0 +1,14 @@
+---
+import Base from '@/layouts/Base.astro';
+---
+
+<Base title="Strona nie znaleziona" description="Nie znaleziono strony o podanym adresie." noindex={true}>
+  <section class="hero" style="padding: var(--s-4xl) 0;">
+    <div class="container" style="text-align: center;">
+      <span style="font-size: 6rem; font-family: var(--f-display); color: var(--c-accent); display: block; margin-bottom: var(--s-lg);">404</span>
+      <h1>Strona nie znaleziona</h1>
+      <p class="hero-subtitle">Podana strona nie istnieje lub została przeniesiona.</p>
+      <a href="/" class="btn btn-primary">Wróć na stronę główną</a>
+    </div>
+  </section>
+</Base>

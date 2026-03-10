@@ -1,0 +1,72 @@
+---
+import Base from '@/layouts/Base.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+---
+
+<Base
+  title="Kontakt"
+  description="Skontaktuj się z nami — pytania o copywriting, współpracę, konsultacje. Odpowiadamy na każdą wiadomość."
+>
+  <Breadcrumbs items={[{ label: 'Kontakt' }]} />
+
+  <div class="container">
+    <header class="page-header" style="border: none;">
+      <h1>Kontakt</h1>
+      <p>Masz pytanie lub propozycję współpracy? Napisz do nas.</p>
+    </header>
+
+    <div class="contact-grid">
+      <div>
+        <h2 style="margin-bottom: var(--s-md);">Napisz do nas</h2>
+        <p style="color: var(--c-text-secondary); margin-bottom: var(--s-xl);">
+          Wypełnij formularz, a odpowiemy najszybciej jak to możliwe. Zwykle
+          odpowiadamy w ciągu 24 godzin.
+        </p>
+        <div>
+          <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Adres e-mail</label>
+            <input type="email" id="email" name="email" placeholder="jan@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Temat</label>
+            <select id="subject" name="subject">
+              <option value="general">Pytanie ogólne</option>
+              <option value="cooperation">Współpraca</option>
+              <option value="consultation">Konsultacja</option>
+              <option value="course">Kurs copywritingu</option>
+              <option value="other">Inny temat</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Wiadomość</label>
+            <textarea id="message" name="message" placeholder="Twoja wiadomość..." required></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="alert('Formularz wymaga podpięcia backendu (np. Formspree, Netlify Forms lub własny endpoint).')">
+            Wyślij wiadomość
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="feature-card" style="margin-bottom: var(--s-lg);">
+          <div class="feature-icon">📧</div>
+          <h3>E-mail</h3>
+          <p>kontakt@zostancopywriterem.pl</p>
+        </div>
+        <div class="feature-card" style="margin-bottom: var(--s-lg);">
+          <div class="feature-icon">⏱️</div>
+          <h3>Czas odpowiedzi</h3>
+          <p>Zwykle odpowiadamy w ciągu 24 godzin w dni robocze.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Konsultacje</h3>
+          <p>Szukasz indywidualnej pomocy? <a href="/konsultacje">Sprawdź naszą ofertę konsultacji.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

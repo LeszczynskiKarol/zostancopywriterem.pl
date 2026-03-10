@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  description: string;
+  pubDate: Date;
+  category?: string;
+  readingTime?: number;
+}
+
+const { title, slug, description, pubDate, category = 'Copywriting', readingTime } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="post-card">
+  <div class="post-card-body">
+    <span class="post-card-category">{category}</span>
+    <h3><a href={`/blog/${slug}`}>{title}</a></h3>
+    <p class="post-card-excerpt">{description}</p>
+    <div class="post-card-meta">
+      <span>{formattedDate}</span>
+      {readingTime && <span>{readingTime} min czytania</span>}
+      <a href={`/blog/${slug}`} class="post-card-readmore" style="margin-left: auto;">
+        Czytaj dalej
+      </a>
+    </div>
+  </div>
+</article>

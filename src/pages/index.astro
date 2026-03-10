@@ -1,0 +1,107 @@
+---
+import Base from '@/layouts/Base.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base
+  title="Zostań Copywriterem — Praktyczny blog o copywritingu"
+  description="Dowiedz się, jak zostać copywriterem, budować portfolio, zdobywać klientów i zarabiać na pisaniu tekstów. Praktyczne poradniki, wskazówki i kursy."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge animate-in">Blog o copywritingu</span>
+      <h1 class="animate-in animate-delay-1">Zostań copywriterem<br/>i zarabiaj na pisaniu</h1>
+      <p class="hero-subtitle animate-in animate-delay-2">
+        Praktyczne poradniki, sprawdzone strategie i konkretne wskazówki
+        dla początkujących i doświadczonych copywriterów.
+      </p>
+      <div class="btn-group animate-in animate-delay-3">
+        <a href="/blog" class="btn btn-primary">Czytaj artykuły</a>
+        <a href="/kurs-copywritingu" class="btn btn-outline">Kurs copywritingu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Czego się tutaj nauczysz?</h2>
+        <p>Od pierwszych kroków w copywritingu po zaawansowane techniki i strategię budowania kariery.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">✍️</div>
+          <h3>Warsztat copywritera</h3>
+          <p>Poznaj techniki pisania perswazyjnych tekstów, budowania struktury artykułów i tworzenia angażujących treści.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>SEO i pozycjonowanie</h3>
+          <p>Naucz się tworzyć treści, które nie tylko czytają się dobrze, ale też zajmują wysokie pozycje w Google.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Kariera i zlecenia</h3>
+          <p>Dowiedz się, gdzie szukać zleceń, jak budować portfolio i jak wyceniać swoją pracę copywritera.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Rozwój i specjalizacja</h3>
+          <p>Odkryj specjalizacje copywriterskie — od technical writingu po UX writing — i wybierz swoją ścieżkę.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Produktywność</h3>
+          <p>Sprawdzone metody i narzędzia, które pomogą Ci pisać szybciej i zarabiać więcej.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Strategie marketingowe</h3>
+          <p>Content marketing, social media, email marketing — poznaj kontekst, w którym pracuje nowoczesny copywriter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="section" style="background: var(--c-bg-alt); padding: var(--s-4xl) 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Najnowsze artykuły</h2>
+        <p>Praktyczna wiedza, którą możesz wykorzystać od razu.</p>
+      </div>
+      <div class="posts-grid">
+        {posts.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id.replace(/\.md$/, '')}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            category={post.data.category}
+            readingTime={post.data.readingTime}
+          />
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: var(--s-2xl);">
+        <a href="/blog" class="btn btn-outline">Wszystkie artykuły →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <h2>Gotowy, żeby zacząć?</h2>
+        <p>Dołącz do społeczności copywriterów i zacznij swoją przygodę z pisaniem.</p>
+        <a href="/kurs-copywritingu" class="btn btn-primary">Sprawdź kurs copywritingu</a>
+      </div>
+    </div>
+  </section>
+</Base>
