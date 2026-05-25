@@ -10,9 +10,21 @@ interface Props {
   category?: string;
   readingTime?: number;
   tags?: string[];
+  heroImage?: string;
+  author?: { name: string; url?: string };
 }
 
-const { title, description, pubDate, updatedDate, category = 'Copywriting', readingTime, tags = [] } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  category = 'Copywriting',
+  readingTime,
+  tags = [],
+  heroImage,
+  author = { name: 'Karol Leszczyński', url: '/o-autorze/' },
+} = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('pl-PL', {
   year: 'numeric',
@@ -36,15 +48,20 @@ const articleSchema = {
   "description": description,
   "datePublished": pubDate.toISOString(),
   ...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
+  ...(heroImage ? { "image": heroImage.startsWith('http') ? heroImage : `${siteUrl}${heroImage}` } : {}),
   "author": {
-    "@type": "Organization",
-    "name": "Zostań Copywriterem",
-    "url": siteUrl,
+    "@type": "Person",
+    "name": author.name,
+    ...(author.url ? { "url": author.url.startsWith('http') ? author.url : `${siteUrl}${author.url}` } : {}),
   },
   "publisher": {
     "@type": "Organization",
     "name": "Zostań Copywriterem",
     "url": siteUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/og-default.jpg`,
+    },
   },
   "mainEntityOfPage": articleUrl,
   "inLanguage": "pl-PL",
@@ -56,6 +73,7 @@ const articleSchema = {
   title={title}
   description={description}
   ogType="article"
+  ogImage={heroImage}
   articleDate={pubDate}
   articleModified={updatedDate}
 >

@@ -1,0 +1,119 @@
+---
+import Base from '@/layouts/Base.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const siteUrl = 'https://www.zostancopywriterem.pl';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karol Leszczyński",
+  "jobTitle": "Copywriter, właściciel agencji copywriterskiej",
+  "url": "https://www.karol-leszczynski.pl",
+  "sameAs": [
+    "https://www.karol-leszczynski.pl",
+    "https://www.ecopywriting.pl",
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ecopywriting.pl",
+    "url": "https://www.ecopywriting.pl",
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Uniwersytet Mikołaja Kopernika w Toruniu",
+    "url": "https://www.umk.pl",
+  },
+  "knowsAbout": [
+    "copywriting",
+    "SEO copywriting",
+    "marketing treści",
+    "content marketing",
+    "działalność nierejestrowana",
+    "freelancing",
+  ],
+  "mainEntityOfPage": `${siteUrl}/o-autorze/`,
+};
+---
+
+<Base
+  title="O autorze — Karol Leszczyński"
+  description="Karol Leszczyński — copywriter z ponad 15-letnim doświadczeniem, właściciel agencji Ecopywriting.pl, absolwent Lingwistyki praktycznej i copywritingu na UMK. O autorze bloga Zostań Copywriterem."
+  ogType="profile"
+>
+  <Breadcrumbs items={[{ label: 'O autorze' }]} />
+
+  <article class="container container--prose">
+    <header class="author-header">
+      <h1>O autorze</h1>
+      <p class="author-tagline">Karol Leszczyński — copywriter, redaktor, właściciel agencji Ecopywriting.pl</p>
+    </header>
+
+    <div class="prose">
+      <p>
+        Cześć! Nazywam się <strong>Karol Leszczyński</strong> i od 2008 roku
+        zawodowo zajmuję się <strong>pisaniem tekstów na zlecenie</strong>.
+        Zaczynałem od stawki 3 zł za 1000 znaków, dziś prowadzę własną agencję
+        copywriterską <a href="https://www.ecopywriting.pl/" rel="noopener">Ecopywriting.pl</a>,
+        a niniejszy blog jest miejscem, w którym dzielę się tym, czego nauczyłem
+        się w branży przez kilkanaście lat.
+      </p>
+
+      <h2>Doświadczenie</h2>
+      <ul>
+        <li>Ponad <strong>15 lat aktywnej pracy</strong> jako copywriter — od freelancingu po prowadzenie własnej agencji.</li>
+        <li><strong>Tysiące zrealizowanych tekstów</strong>: artykuły blogowe, opisy produktów, treści SEO, landing pages, materiały szkoleniowe, dokumentacja techniczna.</li>
+        <li>Realizacje w obszarach branż: budowlanej, medycznej, finansowej, prawnej, e-commerce, B2B i wielu innych.</li>
+      </ul>
+
+      <h2>Wykształcenie</h2>
+      <p>
+        Jestem absolwentem unikalnego w skali kraju kierunku
+        <strong>„Lingwistyka praktyczna i copywriting"</strong> na
+        <a href="https://www.umk.pl" rel="noopener">Uniwersytecie Mikołaja Kopernika w Toruniu</a> —
+        jedynych studiów w Polsce, które łączą językoznawstwo z praktyką copywritingu.
+      </p>
+
+      <h2>O czym piszę na tym blogu</h2>
+      <p>
+        <strong>Zostań Copywriterem</strong> to blog, na którym tłumaczę, jak
+        wejść do branży copywriterskiej, znaleźć pierwsze zlecenia, rozliczyć
+        się z fiskusem (działalność nierejestrowana, umowy o dzieło),
+        zbudować portfolio i wycenić swoją pracę.
+      </p>
+      <p>
+        Nie obiecuję „10&nbsp;000 zł w miesiąc po obejrzeniu webinaru" —
+        piszę o tym, co naprawdę działa w 2025/2026 roku, bazując na własnej
+        praktyce i obserwacji rynku.
+      </p>
+
+      <h2>Gdzie mnie znaleźć</h2>
+      <ul>
+        <li>Strona osobista: <a href="https://www.karol-leszczynski.pl" rel="noopener">karol-leszczynski.pl</a></li>
+        <li>Agencja copywriterska: <a href="https://www.ecopywriting.pl" rel="noopener">ecopywriting.pl</a></li>
+        <li>Kontakt: <a href="/kontakt/">formularz kontaktowy</a> lub <a href="mailto:kontakt@zostancopywriterem.pl">kontakt@zostancopywriterem.pl</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+</Base>
+
+<style>
+  .author-header {
+    padding: var(--space-12, 3rem) 0 var(--space-6, 1.5rem);
+    border-bottom: 1px solid var(--c-border, #E0DED8);
+    margin-bottom: var(--space-8, 2rem);
+  }
+
+  .author-header h1 {
+    font-size: var(--fs-3xl, 2.25rem);
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .author-tagline {
+    font-size: var(--fs-lg, 1.125rem);
+    color: var(--c-text-secondary, #5A5A54);
+    margin: 0;
+  }
+</style>

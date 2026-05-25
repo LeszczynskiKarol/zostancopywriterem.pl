@@ -8,7 +8,11 @@ export default defineConfig({
     assets: "_assets",
     inlineStylesheets: "auto",
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/polityka-prywatnosci'),
+    }),
+  ],
   vite: {
     build: {
       cssMinify: true,

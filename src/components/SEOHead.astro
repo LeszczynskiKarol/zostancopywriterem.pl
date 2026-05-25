@@ -23,14 +23,12 @@ const {
 
 const siteName = 'Zostań Copywriterem';
 const siteUrl = 'https://www.zostancopywriterem.pl';
-const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const fullTitle = title.includes(siteName) || title.includes('ZostanCopywriterem') ? title : `${title} | ${siteName}`;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
 
-<!-- Primary Meta -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Primary Meta (charset + viewport są w Base.astro PRZED skryptami) -->
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}

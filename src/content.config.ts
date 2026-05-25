@@ -12,6 +12,10 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     readingTime: z.number().optional(),
     draft: z.boolean().default(false),
+    author: z.object({
+      name: z.string(),
+      url: z.string().optional(),
+    }).default({ name: 'Karol Leszczyński', url: '/o-autorze/' }),
   }),
 });
 

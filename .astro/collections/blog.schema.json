@@ -63,6 +63,25 @@
           "type": "boolean",
           "default": false
         },
+        "author": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false,
+          "default": {
+            "name": "Karol Leszczyński",
+            "url": "/o-autorze/"
+          }
+        },
         "$schema": {
           "type": "string"
         }
