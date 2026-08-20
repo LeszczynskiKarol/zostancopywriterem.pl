@@ -635,6 +635,13 @@ hr {
   text-align: center;
 }
 
+.footer-bottom a {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s var(--ease);
+}
+
+.footer-bottom a:hover { color: white; }
+
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr; gap: var(--s-xl); }
 }
